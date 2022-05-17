@@ -92,7 +92,6 @@ def predictProba0():
 	id_client_received = int(request.args.get('id_client'))
 	
 	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
-	print(index_predsProba)
 	return jsonify(preds_proba[index_predsProba][0])
 	
 @app.route("/predictProba1", methods=['POST'])
@@ -100,7 +99,6 @@ def predictProba1():
 	id_client_received = int(request.args.get('id_client'))
 	
 	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
-	print(index_predsProba)
 	return jsonify(preds_proba[index_predsProba][1])
 
 #if __name__ == '__main__':
