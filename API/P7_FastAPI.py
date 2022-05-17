@@ -17,7 +17,7 @@ from flask import request, jsonify
 from markupsafe import escape
 # import streamlit as st
 
-filename = './LGBMC332_model.sav'
+filename = 'LGBMC332_model.sav'
 #filename = 'RFC_model.sav'
 model = pickle.load(open(filename, 'rb'))
 
