@@ -22,14 +22,14 @@ filename = './LGBMC332_model.sav'
 model = pickle.load(open(filename, 'rb'))
 
 df_model = pd.read_csv('./df_model_mini.csv')
-X = df_model.iloc[:,2:]
-y = df_model.iloc[:,1]
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
+#X = df_model.iloc[:,2:]
+#y = df_model.iloc[:,1]
+#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
 
 #preds = model.predict(X_test.iloc[0:2,:])
-preds = model.predict(df_model.iloc[0:2,2:])
+#preds = model.predict(df_model.iloc[0:2,2:])
 
-preds_proba = model.predict_proba(df_model.iloc[:,2:])
+#preds_proba = model.predict_proba(df_model.iloc[:,2:])
 
 class Client(BaseModel):
     id_client: int
