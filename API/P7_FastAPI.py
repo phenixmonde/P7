@@ -103,8 +103,8 @@ def predictProba1():
 	print(index_predsProba)
 	return jsonify(preds_proba[index_predsProba][1])
 
-if __name__ == '__main__':
-    app.run()
+#if __name__ == '__main__':
+#    app.run()
 	
 #nest_asyncio.apply()
 #uvicorn.run(app, host='127.0.0.1', port=8080)
