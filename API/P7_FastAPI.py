@@ -1,6 +1,6 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.wsgi import WSGIMiddleware
+#from fastapi import FastAPI
+#from fastapi.middleware.cors import CORSMiddleware
+#from fastapi.middleware.wsgi import WSGIMiddleware
 from pyngrok import ngrok
 import nest_asyncio
 import uvicorn
