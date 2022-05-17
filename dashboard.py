@@ -12,7 +12,7 @@ url_predict = 'http://127.0.0.1:5000/predict'
 url_predict_proba0 = 'http://127.0.0.1:5000/predictProba0'
 url_predict_proba1 = 'http://127.0.0.1:5000/predictProba1'
 
-filename = './dictionnaire_explainer.sav'
+filename = './dictionnaire_explainer5.sav'
 
 
 
