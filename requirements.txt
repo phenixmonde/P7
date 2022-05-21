@@ -47,9 +47,6 @@ keyboard==0.13.5
 lightgbm==3.3.2
 llvmlite==0.38.0
 missingno==0.4.2
-mkl-fft==1.1.0
-mkl-random==1.1.1
-mkl-service==2.3.0
 multipledispatch==0.6.0
 munkres==1.1.4
 navigator-updater==0.2.1
