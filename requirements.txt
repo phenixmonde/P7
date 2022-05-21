@@ -13,7 +13,7 @@ boto==2.49.0
 Brotli==1.0.9
 certifi==2021.10.8
 click==8.0.0
-clyent==1.2.2
+clyent==1.2.1
 commonmark==0.9.1
 comtypes==1.1.11
 conda==4.12.0
