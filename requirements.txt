@@ -16,7 +16,6 @@ click==8.0.0
 clyent==1.2.1
 commonmark==0.9.1
 comtypes==1.1.11
-conda==4.12.0
 conda-build==3.21.8
 cytoolz==0.11.2
 dash==1.19.0
