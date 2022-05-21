@@ -101,8 +101,8 @@ def predictProba1():
 	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
 	return jsonify(preds_proba[index_predsProba][1])
 
-#if __name__ == '__main__':
-#    app.run()
+if __name__ == '__main__':
+    app.run()
 	
 #nest_asyncio.apply()
 #uvicorn.run(app, host='127.0.0.1', port=8080)
