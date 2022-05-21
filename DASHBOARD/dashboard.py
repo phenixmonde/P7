@@ -11,7 +11,7 @@ url_predict = 'http://127.0.0.1:5000/predict'
 url_predict_proba0 = 'http://127.0.0.1:5000/predictProba0'
 url_predict_proba1 = 'http://127.0.0.1:5000/predictProba1'
 
-dic_exp = pickle.load(open('./dictionnaire_explainer5.sav', 'rb'))
+dic_exp = pickle.load(open('./DASHBOARD/dictionnaire_explainer5.sav', 'rb'))
 df_store = pickle.load(open("./df_store_40", 'rb'))
 df_model = pd.read_csv('./df_model_mini.csv')
 
