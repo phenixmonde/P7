@@ -7,13 +7,14 @@ import uvicorn
 import pickle
 import pandas as pd
 from pydantic import BaseModel
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+#from sklearn.model_selection import train_test_split
+#from sklearn.ensemble import RandomForestClassifier
+import lightgbm
 import typing as T
 import numpy as np
 from pydantic import BaseModel
-import flask
-from flask import request, jsonify
+#import flask
+#from flask import request, jsonify
 from markupsafe import escape
 # import streamlit as st
 
@@ -34,75 +35,75 @@ df_model = pd.read_csv('./df_model_mini.csv')
 class Client(BaseModel):
     id_client: int
 
-#app = FastAPI()
+app = FastAPI()
 
-#@app.get('/')
-#def index():
-#    return {'message': 'Hello, World'}
+@app.get('/')
+def index():
+    return {'message': 'Hello, World'}
 
-#@app.get('/{name}')
-#def get_name(name: str):
-#    return {'Welcome To Dashboard': f'{name}'}
+@app.get('/{name}')
+def get_name(name: str):
+    return {'Welcome To Dashboard': f'{name}'}
 
 
-#@app.post('/predict')
-#def predict(data: Client):
-#	data = data.dict()
-#	id_client_received = data['id_client']
-#	#id_client_received = data
-#	print(id_client_received)
-	
-#	prediction = model.predict(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:])
-	
-#	if(prediction[0]==1):
-#		prediction= "Not Eligible"
-#	else:
-#		prediction= "Eligible"
-		
-#	print(type(prediction))
-	
-#	return {'prediction': prediction}
-
-app = flask.Flask(__name__)
-
-@app.route('/')
-def hello():
-    return 'Hello, World!'
-
-@app.route("/predict", methods=['POST'])
-def predict():
-	#id_client = id_client.dict()
-	#id_client_received = id_client['id_client']
-	id_client_received = int(request.args.get('id_client'))
-	#id_client_received = id_client_received.get('id_client_received')
-	#id_client_received = escape(id_client)
+@app.post('/predict')
+def predict(data: Client):
+	data = data.dict()
+	id_client_received = data['id_client']
+	#id_client_received = data
+	print(id_client_received)
 	
 	prediction = model.predict(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:])
 	
-	if(prediction[0] == 1):
-		prediction = "Not Eligible"
+	if(prediction[0]==1):
+		prediction= "Not Eligible"
 	else:
-		prediction = "Eligible"
+		prediction= "Eligible"
+		
+	print(type(prediction))
+	
+	return {'prediction': prediction}
+
+#app = flask.Flask(__name__)
+
+#app.route('/')
+#def hello():
+ #   return 'Hello, World!'
+
+#@app.route("/predict", methods=['POST'])
+#def predict():
+	#id_client = id_client.dict()
+	#id_client_received = id_client['id_client']
+#	id_client_received = int(request.args.get('id_client'))
+	#id_client_received = id_client_received.get('id_client_received')
+	#id_client_received = escape(id_client)
+	
+#	prediction = model.predict(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:])
+	
+#	if(prediction[0] == 1):
+#		prediction = "Not Eligible"
+#	else:
+#		prediction = "Eligible"
 		
 	#return(prediction)
-	return jsonify(prediction)
+#	return jsonify(prediction)
 	
-@app.route("/predictProba0", methods=['POST'])
-def predictProba0():
-	id_client_received = int(request.args.get('id_client'))
+#@app.route("/predictProba0", methods=['POST'])
+#def predictProba0():
+#	id_client_received = int(request.args.get('id_client'))
 	
-	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
-	return jsonify(preds_proba[index_predsProba][0])
+#	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
+#	return jsonify(preds_proba[index_predsProba][0])
 	
-@app.route("/predictProba1", methods=['POST'])
-def predictProba1():
-	id_client_received = int(request.args.get('id_client'))
+#@app.route("/predictProba1", methods=['POST'])
+#def predictProba1():
+#	id_client_received = int(request.args.get('id_client'))
 	
-	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
-	return jsonify(preds_proba[index_predsProba][1])
+#	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
+#	return jsonify(preds_proba[index_predsProba][1])
 
-if __name__ == '__main__':
-    app.run()
+#if __name__ == '__main__':
+#    app.run()
 	
-#nest_asyncio.apply()
-#uvicorn.run(app, host='127.0.0.1', port=8080)
+nest_asyncio.apply()
+uvicorn.run(app, host='127.0.0.1', port=8080)
