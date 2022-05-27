@@ -1,3 +1,4 @@
+numpy==1.19.5
 clyent==1.2.1
 fastapi==0.75.2
 glob2==0.7
@@ -14,4 +15,4 @@ aiofiles==0.6.0
 python-multipart==0.0.5
 jinja2==2.11.2
 pandas==1.2.4
-numpy==1.19
+
