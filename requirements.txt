@@ -1,4 +1,4 @@
-numpy==1.19.5
+
 clyent==1.2.1
 fastapi==0.75.2
 glob2==0.7
