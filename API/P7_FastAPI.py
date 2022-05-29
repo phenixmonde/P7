@@ -18,8 +18,8 @@ from pydantic import BaseModel
 from markupsafe import escape
 # import streamlit as st
 
-filename = './LGBMC332_model.sav'
-#filename = 'RFC_model.sav'
+#filename = './LGBMC332_model.sav'
+filename = './RFC_model200.sav'
 model = pickle.load(open(filename, 'rb'))
 
 df_model = pd.read_csv('./df_model_mini.csv')
@@ -52,9 +52,9 @@ def predict(data: Client):
 	id_client_received = data['id_client']
 	#id_client_received = data
 	print(id_client_received)
-	
-	prediction = model.predict(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:])
-	
+	df_check = df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:].squeeze().array.reshape(1, -1)
+	#prediction = model.predict(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:])
+	prediction = model.predict(df_check)
 	if(prediction[0]==1):
 		prediction= "Not Eligible"
 	else:
