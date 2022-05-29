@@ -53,6 +53,7 @@ def predict(data: Client):
 	#id_client_received = data
 	print(id_client_received)
 	df_check = df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:].squeeze().array.reshape(1, -1)
+	print(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,0:])
 	#prediction = model.predict(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:])
 	prediction = model.predict(df_check)
 	if(prediction[0]==1):
