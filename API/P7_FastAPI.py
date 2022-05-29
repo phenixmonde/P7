@@ -55,6 +55,12 @@ def predict(data: Client):
 	
 	print(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,0:])
 	
+	print(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,0:].shape)
+	
+	print(type(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:].squeeze()))
+	
+	print(type(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:].squeeze().array))
+	
 	df_check = df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:].squeeze().array.reshape(1, -1)
 	
 	#prediction = model.predict(df_model[df_model["SK_ID_CURR"] == id_client_received].iloc[:,2:])
