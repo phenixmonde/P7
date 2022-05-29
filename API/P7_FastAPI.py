@@ -105,5 +105,5 @@ def predict(data: Client):
 #if __name__ == '__main__':
 #    app.run()
 	
-#nest_asyncio.apply()
+nest_asyncio.apply()
 #uvicorn.run(app, host='127.0.0.1', port=8080)
