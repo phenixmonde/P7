@@ -19,7 +19,7 @@ from markupsafe import escape
 # import streamlit as st
 
 #filename = './LGBMC332_model.sav'
-filename = './RFC_mode200.sav'
+filename = './RFC_model200.sav'
 model = pickle.load(open(filename, 'rb'))
 
 df_model = pd.read_csv('./df_model_mini.csv')
