@@ -71,6 +71,7 @@ fig = plt.figure()
 a = df_store[feature_client].index
 b = df_store[feature_client]
 
+@st.cache
 plt.bar(a, b, color = "black")
 #plt.bar(df_store0[feature_client].index.values, df_store0[feature_client], color = "r")
 #plt.bar(df_store1[feature_client].index.values, df_store1[feature_client], color = "b")
