@@ -78,7 +78,8 @@ plt.bar(a, b, color = "black")
 
 #df_store = pickle.load(open("./df_store", 'rb'))
 #plt.hist(df_store[feature_client], color = "r")
-plt.axvline(x = df_model[df_model["SK_ID_CURR"] == id_client][feature_client].values[0], color = 'g', linestyle = '-')
+plt.axvline(x = df_model[df_model["SK_ID_CURR"] == id_client][feature_client], color = 'g', linestyle = '-')
+#plt.axvline(x = df_model[df_model["SK_ID_CURR"] == id_client][feature_client].values[0], color = 'g', linestyle = '-')
 #plt.axhline(y = df_mean_graph_zero[feature_client].values[0], color = 'r', linestyle = '-')
 #plt.axhline(y = df_mean_graph_un[feature_client].values[0], color = 'g', linestyle = '-')
 # creating subplots
