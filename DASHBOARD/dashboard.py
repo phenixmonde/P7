@@ -20,10 +20,10 @@ url_predict_proba0 = 'https://bl-p7-api.herokuapp.com/predictProba0'
 url_predict_proba1 = 'https://bl-p7-api.herokuapp.com/predictProba1'
 
 
-dic_exp = pickle.load(open('./dictionnaire_explainer5.sav', 'rb'))
+dic_exp = pickle.load(open('./DASHBOARD/dictionnaire_explainer5.sav', 'rb'))
 #dic_exp = pickle.load(open('./dictionnaire_explainerRFC5.sav', 'rb'))
-df_store = pickle.load(open("./df_store_40", 'rb'))
-df_model = pd.read_csv('./df_model_mini.csv')
+df_store = pickle.load(open("./DASHBOARD/df_store_40", 'rb'))
+df_model = pd.read_csv('./DASHBOARD/df_model_mini.csv')
 
 
 
