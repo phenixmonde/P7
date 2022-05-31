@@ -18,8 +18,8 @@ from pydantic import BaseModel
 from markupsafe import escape
 # import streamlit as st
 
-#filename = './LGBMC332_model.sav'
-filename = './API/RFC_model200.sav'
+filename = './API/LGBMC332_model.sav'
+#filename = './API/RFC_model200.sav'
 model = pickle.load(open(filename, 'rb'))
 
 df_model = pd.read_csv('./API/df_model_mini.csv')
