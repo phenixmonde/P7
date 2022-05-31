@@ -30,7 +30,7 @@ df_model = pd.read_csv('./API/df_model_mini.csv')
 #preds = model.predict(X_test.iloc[0:2,:])
 #preds = model.predict(df_model.iloc[0:2,2:])
 
-#preds_proba = model.predict_proba(df_model.iloc[:,2:])
+preds_proba = model.predict_proba(df_model.iloc[:,2:])
 
 class Client(BaseModel):
     id_client: int
@@ -76,23 +76,27 @@ def predict(data: Client):
 	
 	return {'prediction': prediction}
 
-@app.post("/predictProba0")
+@app.post('/predictProba0')
 def predictProba0(data: Client):
 	data = data.dict()
 	id_client_received = data['id_client']
 	
 	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
+	print(index_predsProba)
 	
-	return {'prediction': model.predict_proba(df_model.iloc[index_predsProba,2:])[0]}
+	return {'prediction': preds_proba[index_predsProba][0]}
+	#return {'prediction': model.predict_proba(df_model.iloc[index_predsProba,2:])[0]}
 	
-@app.post("/predictProba1")
+@app.post('/predictProba1')
 def predictProba1(data: Client):
 	data = data.dict()
 	id_client_received = data['id_client']
 	
 	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
+	print(index_predsProba)
 	
-	return {'prediction': model.predict_proba(df_model.iloc[index_predsProba,2:])[1]}
+	return {'prediction': preds_proba[index_predsProba][1]}
+	#return {'prediction': model.predict_proba(df_model.iloc[index_predsProba,2:])[1]}
 
 #app = flask.Flask(__name__)
 
