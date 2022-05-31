@@ -76,6 +76,24 @@ def predict(data: Client):
 	
 	return {'prediction': prediction}
 
+@app.post("/predictProba0")
+def predictProba0(data: Client):
+	data = data.dict()
+	id_client_received = data['id_client']
+	
+	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
+	
+	return {'prediction': model.predict_proba(df_model.iloc[index_predsProba,2:])[0]}
+	
+@app.post("/predictProba1")
+def predictProba1(data: Client):
+	data = data.dict()
+	id_client_received = data['id_client']
+	
+	index_predsProba = df_model[df_model["SK_ID_CURR"]==id_client_received].index.values[0]
+	
+	return {'prediction': model.predict_proba(df_model.iloc[index_predsProba,2:])[1]}
+
 #app = flask.Flask(__name__)
 
 #app.route('/')
