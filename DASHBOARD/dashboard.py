@@ -36,7 +36,7 @@ st.sidebar.dataframe(df_model.loc[df_model["SK_ID_CURR"] == id_client, l_crucial
 #CENTER
 st.title('Client knowledge Dashboard')
 
-st.dataframe(df_model[df_model["SK_ID_CURR"] == id_client])
+st.dataframe(df_model[df_model["SK_ID_CURR"] == id_client].iloc[:,2:])
 #st.dataframe(df_model[df_model["SK_ID_CURR"] == id_client].iloc[:, 2:])
 data = {'id_client': id_client}
 
