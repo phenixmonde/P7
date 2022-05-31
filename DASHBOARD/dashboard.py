@@ -60,7 +60,7 @@ else:
 st.header(str(val_status['prediction']) + " à: "+ str(round(val_statusProba['prediction'], 2)) + "%")
 #st.header(str(val_status) + " à: "+ str(round(val_statusProba, 2)) + "%")
 
-st.components.v1.html(dic_exp[id_client], width=300 , height=800)
+st.components.v1.html(dic_exp[id_client], width=1500 , height=800)
 st.header("DATAVIZ")
 feature_client = st.selectbox('Variable', df_model.columns[2:])
 
