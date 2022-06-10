@@ -22,6 +22,8 @@ La distribution des clients pour 40 features en vue de générer les graphes
 Un dictionnaire contenant le lime explainer de 5 clients pour la demo
 
 #Autres éléments importants:
+### code de modelisation: https://colab.research.google.com/drive/1P5DpchoQoVNLw07zKr-fb2yBMvk_i7kb?usp=sharing
+Allant du chargement de la donnée à l'implémentation du modèle
 ### Procfile 
 utile à heroku, décrivant le déploiement
 ### requirements.txt
