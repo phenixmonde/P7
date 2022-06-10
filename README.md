@@ -1,8 +1,8 @@
 # P7
 GIT STRUCTURE
 
-# API 
-La structure qui est déployée du côté heroku. Celle-ci contient:
+# API: https://bl-p7-api.herokuapp.com/docs
+## La structure qui est déployée du côté heroku. Celle-ci contient:
 ### LGBMC3332_mode.sav
 Le modèle LightGBMClassifier implémenté
 ### P7_FastAPI.py
@@ -10,8 +10,8 @@ Le script d'API
 ### df_model_mini.csv
 Une version miniature du dataset réel sur lequel on peut faire des prédictions pour une démo
 
-#DASHBOARD
-La structure qui est déployée du côté streamlit. Celle-ci contient:
+# DASHBOARD: https://share.streamlit.io/phenixmonde/p7/main/DASHBOARD/dashboard.py
+## La structure qui est déployée du côté streamlit. Celle-ci contient:
 ### dashboard.py
 Le script du dashboard streamlit
 ### df_model_mini.csv
